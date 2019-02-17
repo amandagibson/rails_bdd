@@ -1,14 +1,13 @@
+Feature: Publisher can create articles
+    As a publisher
+    In order to add relevant content to my news service
+    I would like to be able to create articles
 
-Feature: Create articles
-  As a publisher
-  In order to add relevant content to my news service
-  I would like to be able to create articles
-
-  Background:
+Background:
     Given I visit the "landing" page
-    When I click "New Article"
+    When I click "New Article" link
 
-  Scenario: Successfully create an article [Happy Path]
+Scenario: Publisher can successfully create an article [Happy Path]
     When I fill in "Title" with "Learning Rails 5"
     And I fill in "Content" with "Excited about learning a new framework"
     And I click "Create Article" button
@@ -17,9 +16,7 @@ Feature: Create articles
     And I should see "Learning Rails 5"
     And I should see "Excited about learning a new framework"
 
-  Scenario: Publisher doesn't enter a title for the article [Sad Path]
+Scenario: Publisher doesn't enter a title or text for the article [Sad Path]
     When I fill in "Content" with "Excited about learning a new framework"
     And I click "Create Article" button
-    Then I should see "Title can't be blank"
-
-  # Write another sad path scenario you can think of
+    Then I should see "Title and text can't be blank!"

@@ -20,10 +20,11 @@ class ArticlesController < ApplicationController
 
 	def create
 		@article = Article.new(article_params)
-
 		if @article.save
+			flash[:success] = 'Article was successfully created.'
 			redirect_to @article
 		else
+			flash[:error] = "Title and text can't be blank!"
 			render 'new'
 		end
 	end
@@ -32,8 +33,10 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 
 		if @article.update(article_params)
+			flash[:success] = 'Article was successfully updated.'
 			redirect_to @article
 		else
+			flash[:error] = "Title and text can't be blank!"
 			render 'edit'
 		end
 	end
