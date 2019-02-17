@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'articles/index'
-	root controller: :articles, action: :index
-	resources :articles
+	get 'welcome/index'
+
+
+	resources :articles do
+		resources :comments
+	end
+
+	root 'welcome#index'
 end
