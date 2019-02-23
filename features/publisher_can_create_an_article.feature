@@ -5,10 +5,10 @@ Feature: Publisher can create articles
 
 Background:
     Given I visit the site
-    When I click "New article"
 
 Scenario: Publisher can successfully create an article [Happy Path]
-    When I fill in "Title" with "Learning Rails 5"
+    When I click "New article"
+    Then I fill in "Title" with "Learning Rails 5"
     And I fill in "Content" with "Excited about learning a new framework"
     And I click "Create Article" button
     Then I should be on "Learning Rails 5" page
