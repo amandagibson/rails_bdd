@@ -1,9 +1,12 @@
 Feature: Visitor can leave a comment on an Article
 
-//User story
+	As a Visitor
+	In order to leave feedback
+	I would like to be able to comment on an article
 
-Background:
+	Background:
+	Given I visit the "landing" page
+	When I click "My Blog"
+	Then I click "Show" link
 
-
-Scenario:
-
+	Scenario: Visitor is able to leave comments

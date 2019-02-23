@@ -3,5 +3,9 @@ Then("I should see {string}") do |content|
 end
 
 Then("I should be on {string} page") do |string|
-expect(page).to have_content string
+	expect(page).to have_content string
+end
+
+Then("I click {string}") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
 end
