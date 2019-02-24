@@ -4,16 +4,16 @@ Given("the following articles exists") do |table|
 	end
 end
 
-When("I visit the site") do
-	visit root_path
+When("I visit the {string} page") do |string|
+	visit '/'
 end
 
 When("I click {string}") do |link|
 	click_on link
 end
 
-When("I fill in {string} with {string}") do |field, content|
-	fill_in field, with: content
+When("I fill in {string} with {string}") do |element, content|
+	fill_in element, with: content
 end
 
 When("I click {string} button") do |string|
